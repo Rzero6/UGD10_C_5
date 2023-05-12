@@ -51,7 +51,7 @@ public class CustomerDAO {
         dbcon.closeConnection();
     }
     
-    public List<Customer> showCustomer(String query){
+    public List<Customer> showCustomer(){
         con = dbcon.makeConnection();
         
         String sql = "SELECT * FROM customer";

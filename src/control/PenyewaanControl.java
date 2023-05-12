@@ -26,7 +26,7 @@ public class PenyewaanControl {
         pDao.insertPenyewaan(p);
     }
     
-    public String showDataPenyewaan(String query){
+    public TablePenyewaan showDataPenyewaan(String query){
         List<Penyewaan> dataPenyewaan = pDao.showPenyewaan(query);
         TablePenyewaan tablePenyewaan = new TablePenyewaan(dataPenyewaan);
         

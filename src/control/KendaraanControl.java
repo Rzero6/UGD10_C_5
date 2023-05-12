@@ -17,23 +17,23 @@ import java.util.List;
 import model.Kendaraan;
 
 public class KendaraanControl {
-    private kendaraanDAO dDao = new kendaraanDAO();
+    private kendaraanDAO kDao = new kendaraanDAO();
     
     public void insertDataKendaraan(Kendaraan k){
-        dDao.insertKendaraan(k);
+        kDao.insertKendaraan(k);
     }
     
     public int getDataCount(String jenis){
-        List<Kendaraan> dataKendaraan = dDao.showKendaraan(jenis);
+        List<Kendaraan> dataKendaraan = kDao.showKendaraan(jenis);
         return dataKendaraan.size();
     }
     
     public Kendaraan getLasKendaraan(String jenis){
-        return dDao.getLastData(jenis);
+        return kDao.getLastData(jenis);
     }
     
     public String showDataKendaraan(String jenis){
-        List<Kendaraan> dataKendaraan = dDao.showKendaraan(jenis);
+        List<Kendaraan> dataKendaraan = kDao.showKendaraan(jenis);
         String kendaraanString = "";
         for(int i=0; i<dataKendaraan.size(); i++){
             kendaraanString = kendaraanString + dataKendaraan.get(i).showData(jenis);
@@ -41,15 +41,20 @@ public class KendaraanControl {
         return kendaraanString;
     }
     
+    public List<Kendaraan> showListKendaraan(){
+        List<Kendaraan> dataKendaraan = kDao.showKendaraan("All");
+        return dataKendaraan;
+    }
+    
     public Kendaraan searchKendaraan(String id){
-        return dDao.searchKendaraan(id);
+        return kDao.searchKendaraan(id);
     }
     
     public void updateDataKendaraan(Kendaraan k, String id){
-        dDao.updateKendaraan(k, id);
+        kDao.updateKendaraan(k, id);
     }
     
     public void deleteKendaraan(String id){
-        dDao.deleteKendaraan(id);
+        kDao.deleteKendaraan(id);
     }
 }

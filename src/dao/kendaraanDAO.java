@@ -53,7 +53,12 @@ public class kendaraanDAO {
     
     public List<Kendaraan> showKendaraan(String jenis){
         con = dbCon.makeConnection();
-        String sql = "SELECT * FROM kendaraan WHERE jenis = '"+jenis+"'";
+        String sql;
+        if(jenis.contentEquals("All")){
+            sql = "SELECT * FROM kendaraan";
+        }else{
+            sql = "SELECT * FROM kendaraan WHERE jenis = '"+jenis+"'";
+        }
         
         System.out.println("Mengambil data kendaraan...");
         

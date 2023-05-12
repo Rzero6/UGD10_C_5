@@ -30,10 +30,10 @@ public class PenyewaanDAO {
     public void insertPenyewaan(Penyewaan p){
         con = dbcon.makeConnection();
         
-        String sql = "INSERT INTO penyewaan(id, lama_sewa, total_harga, fasilitas, kendaraan, customer) "
+        String sql = "INSERT INTO penyewaan(id, lama_sewa, total_harga, fasilitas, id_kendaraan, id_customer) "
                 + "VALUES ('" + p.getId() + "', '" + p.getLama_sewa() + "', '"
                 + p.getTotal_harga() + "', '" + p.getFasilitas() + "', '" 
-                + p.getKendaraan() + "', '" + p.getCustomer() + "')";
+                + p.getKendaraan().getId() + "', '" + p.getCustomer().getId() + "')";
         
         System.out.println("Adding Penyewaan ...");
         
@@ -52,16 +52,17 @@ public class PenyewaanDAO {
     public List<Penyewaan> showPenyewaan(String query){
         con = dbcon.makeConnection();
         
-        String sql = "SELECT p.*, k.*, c.* FROM penyewaan as p JOIN kendaraan as k ON p.id_kendaraan = k.id"
-                + "JOIN customer as c ON p.id_customer = c.id"
-                + "WHERE k.merk LIKE '%" + query + "%'"
+        String sql = "SELECT p.*, k.*, c.* FROM penyewaan as p"
+                + " JOIN kendaraan as k ON p.id_kendaraan = k.id"
+                + " JOIN customer as c ON p.id_customer = c.id"
+                + " WHERE (k.merk LIKE '%" + query + "%'"
                 + "OR k.jenis LIKE '%" + query + "%'"
                 + "OR c.nama LIKE '%" + query + "%'"
-                + "OR p.lama_sewa '%" + query + "%'"
-                + "OR p.total_harga '%" + query + "%'"
-                + "OR p.fasilitas '%" + query + "%'"
-                + "OR k.jumlah_penumpang '%" + query + "%'"
-                + "OR k.jenis_tak '%" + query + "%')";
+                + "OR p.lama_sewa LIKE '%" + query + "%'"
+                + "OR p.total_harga LIKE '%" + query + "%'"
+                + "OR p.fasilitas LIKE '%" + query + "%'"
+                + "OR k.jumlah_penumpang LIKE '%" + query + "%'"
+                + "OR k.jenis_tak LIKE '%" + query + "%')";
         System.out.println("Mengambil data Penyewaan ...");
         
         List<Penyewaan> list = new ArrayList();
@@ -73,8 +74,8 @@ public class PenyewaanDAO {
             if(rs != null){
                 while (rs.next()){
                     Kendaraan k = new Kendaraan(
-                            rs.getString("id"),
-                            rs.getString("model"),
+                            rs.getString("k.id"),
+                            rs.getString("merk"),
                             rs.getString("jenis"),
                             rs.getInt("tahunPembuatan"),
                             rs.getString("noPlat"),
@@ -83,14 +84,14 @@ public class PenyewaanDAO {
                     );
                     
                     Customer c = new Customer(
-                            rs.getInt("id"),
+                            rs.getInt("c.id"),
                             rs.getString("nama"),
                             rs.getString("ktp"),
                             rs.getString("no_telepon")
                     );
                     
                     Penyewaan p = new Penyewaan(
-                            rs.getInt("id"),
+                            rs.getInt("p.id"),
                             rs.getString("lama_sewa"),
                             rs.getFloat("total_harga"),
                             rs.getString("fasilitas"),

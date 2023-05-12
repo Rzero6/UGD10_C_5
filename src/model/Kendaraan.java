@@ -76,6 +76,7 @@ public class Kendaraan {
         
     }
     
+    @Override
     public String toString(){
         return merk;
     }

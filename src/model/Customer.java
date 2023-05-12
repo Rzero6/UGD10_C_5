@@ -67,6 +67,7 @@ public class Customer {
         this.no_telepon = no_telepon;
     }
     
+    @Override
     public String toString(){
         return nama;
     }

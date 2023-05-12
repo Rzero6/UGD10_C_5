@@ -75,5 +75,9 @@ public class Kendaraan {
         }
         
     }
+    
+    public String toString(){
+        return merk;
+    }
         
 }

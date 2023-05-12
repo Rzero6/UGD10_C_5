@@ -43,6 +43,7 @@ public class kendaraanDAO {
             Statement statement = con.createStatement();
             int result = statement.executeUpdate(sql);
             System.out.println("Added "+result+" Kendaraan");
+            statement.close();
         }catch(Exception e){
             System.out.println("Error adding Kendaraan...");
             System.out.println("e");

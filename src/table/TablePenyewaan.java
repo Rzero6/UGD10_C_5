@@ -32,7 +32,7 @@ public class TablePenyewaan extends AbstractTableModel{
     }
     
     public int getColumnCount(){
-        return 11;
+        return 8;
     }
     
     public Object getValueAt(int rowIndex, int columnIndex){
@@ -82,12 +82,6 @@ public class TablePenyewaan extends AbstractTableModel{
                 return "Jumlah Penumpang";
             case 7:
                 return "Jumlah Tak";
-            case 8:
-                return "ID";
-            case 9:
-                return "ID K";
-            case 10:
-                return "ID C";
             default:
                 return null;
         }

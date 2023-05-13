@@ -12,10 +12,7 @@ package dao;
  * Nama : Febiola Ika Putri Wibowo
  * NPM : 210711023
  */
-/**
- *
- * @author Msi Modern 14
- */
+
 
 import connection.DbConnection;
 import java.sql.Connection;

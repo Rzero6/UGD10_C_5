@@ -12,10 +12,7 @@ package model;
  * Nama : Febiola Ika Putri Wibowo
  * NPM : 210711023
  */
-/**
- *
- * @author Msi Modern 14
- */
+
 public class Penyewaan {
     private int id;
     private String lama_sewa;

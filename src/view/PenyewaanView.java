@@ -22,10 +22,7 @@ import model.Penyewaan;
  * Nama : Febiola Ika Putri Wibowo
  * NPM : 210711023
  */
-/**
- *
- * @author VICTUS
- */
+
 public class PenyewaanView extends javax.swing.JFrame {
 
     /**
@@ -94,17 +91,16 @@ public class PenyewaanView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         container.setBackground(new java.awt.Color(204, 204, 204));
-        container.setForeground(new java.awt.Color(0, 0, 0));
 
         header.setBackground(new java.awt.Color(255, 204, 0));
 
-        kelompokLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        kelompokLabel.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         kelompokLabel.setText("Kelompok 5");
 
-        npm1Label.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        npm1Label.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         npm1Label.setText("210711015");
 
-        npm2Label.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        npm2Label.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         npm2Label.setText("210711023");
 
         javax.swing.GroupLayout kelompokPanelLayout = new javax.swing.GroupLayout(kelompokPanel);
@@ -112,26 +108,26 @@ public class PenyewaanView extends javax.swing.JFrame {
         kelompokPanelLayout.setHorizontalGroup(
             kelompokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kelompokPanelLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(npm1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(npm2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(kelompokPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(71, 71, 71)
                 .addComponent(kelompokLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kelompokPanelLayout.setVerticalGroup(
             kelompokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kelompokPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addComponent(kelompokLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(kelompokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(npm2Label)
-                    .addComponent(npm1Label))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addGroup(kelompokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(npm1Label)
+                    .addComponent(npm2Label))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
@@ -194,7 +190,7 @@ public class PenyewaanView extends javax.swing.JFrame {
                 .addGroup(actionBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(actionBarLayout.createSequentialGroup()
                         .addComponent(editBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 720, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 735, Short.MAX_VALUE)
                         .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(searchBtn))
@@ -328,7 +324,7 @@ public class PenyewaanView extends javax.swing.JFrame {
                         .addComponent(cancelBtn)
                         .addGap(45, 45, 45)
                         .addComponent(saveBtn)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(54, 67, Short.MAX_VALUE))
         );
 
         inputPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {maskerCheck, snackCheck, tissueCheck});
@@ -373,7 +369,6 @@ public class PenyewaanView extends javax.swing.JFrame {
 
         tablePanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        tablePenyewaan.setBackground(new java.awt.Color(255, 255, 255));
         tablePenyewaan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -434,7 +429,7 @@ public class PenyewaanView extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(inputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
+                .addComponent(jScrollPane2))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

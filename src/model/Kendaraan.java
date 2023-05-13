@@ -55,6 +55,9 @@ public class Kendaraan {
     }
 
     public String getJenis_tak() {
+        if(jenis_tak == null || jenis_tak.isEmpty()){
+            return "-";
+        }
         return jenis_tak;
     }
     

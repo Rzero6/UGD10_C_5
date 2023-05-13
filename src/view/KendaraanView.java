@@ -177,6 +177,7 @@ public class KendaraanView extends javax.swing.JFrame {
         npm2Label = new javax.swing.JLabel();
         logoLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        penyewaanView = new javax.swing.JButton();
         containerLabel = new javax.swing.JPanel();
         containerInputId = new javax.swing.JPanel();
         idLabel = new javax.swing.JLabel();
@@ -227,8 +228,9 @@ public class KendaraanView extends javax.swing.JFrame {
             }
         });
 
+        txtSearch.setBackground(new java.awt.Color(255, 255, 255));
         txtSearch.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        txtSearch.setForeground(new java.awt.Color(153, 153, 153));
+        txtSearch.setForeground(new java.awt.Color(102, 102, 102));
         txtSearch.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtSearch.setText("cari berdasarkan id");
         txtSearch.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -277,17 +279,17 @@ public class KendaraanView extends javax.swing.JFrame {
         actionPanelLayout.setHorizontalGroup(
             actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(actionPanelLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
+                .addGap(45, 45, 45)
                 .addComponent(btnAdd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEdit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDelete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSearch)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
         );
         actionPanelLayout.setVerticalGroup(
             actionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,6 +324,19 @@ public class KendaraanView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 8)); // NOI18N
         jLabel1.setText("By Lala Autos");
 
+        penyewaanView.setBackground(new java.awt.Color(255, 255, 86));
+        penyewaanView.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        penyewaanView.setForeground(new java.awt.Color(51, 51, 51));
+        penyewaanView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/sewaIcon.png"))); // NOI18N
+        penyewaanView.setText("Penyewaan");
+        penyewaanView.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        penyewaanView.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        penyewaanView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                penyewaanViewActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
         headerPanelLayout.setHorizontalGroup(
@@ -333,11 +348,13 @@ public class KendaraanView extends javax.swing.JFrame {
                     .addComponent(npm1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(npm2Label)
-                .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(titleContent)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                        .addComponent(penyewaanView)
+                        .addGap(30, 30, 30)
                         .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
@@ -352,7 +369,7 @@ public class KendaraanView extends javax.swing.JFrame {
             .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(titleContent)
+                    .addComponent(penyewaanView)
                     .addGroup(headerPanelLayout.createSequentialGroup()
                         .addComponent(kelompokLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -362,7 +379,10 @@ public class KendaraanView extends javax.swing.JFrame {
                     .addGroup(headerPanelLayout.createSequentialGroup()
                         .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(titleContent)))
                 .addContainerGap())
         );
 
@@ -416,7 +436,7 @@ public class KendaraanView extends javax.swing.JFrame {
                     .addGroup(containerInputIdLayout.createSequentialGroup()
                         .addComponent(idLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(idInput, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
+                    .addComponent(idInput, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE))
                 .addContainerGap())
         );
         containerInputIdLayout.setVerticalGroup(
@@ -426,7 +446,7 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addComponent(idLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(idInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         containerInputMerk.setBackground(new java.awt.Color(255, 255, 255));
@@ -461,7 +481,7 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addComponent(merkLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(merkInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         containerInputTahun.setBackground(new java.awt.Color(255, 255, 255));
@@ -485,7 +505,7 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addGroup(containerInputTahunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(containerInputTahunLayout.createSequentialGroup()
                         .addComponent(tahunLabel)
-                        .addGap(0, 172, Short.MAX_VALUE))
+                        .addGap(0, 180, Short.MAX_VALUE))
                     .addComponent(tahunInput))
                 .addContainerGap())
         );
@@ -496,7 +516,7 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addComponent(tahunLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tahunInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         containerInputNoPlat.setBackground(new java.awt.Color(255, 255, 255));
@@ -531,7 +551,7 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addComponent(noPlatLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(noPlatInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         containerOptionMobil.setBackground(new java.awt.Color(255, 255, 255));
@@ -712,7 +732,7 @@ public class KendaraanView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnCancel))))
                     .addComponent(showDataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         containerLabelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {containerInputId, containerInputMerk, containerInputNoPlat, containerInputTahun});
@@ -756,7 +776,7 @@ public class KendaraanView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(allPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(containerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
+            .addComponent(containerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -966,6 +986,13 @@ public class KendaraanView extends javax.swing.JFrame {
         txtSearch.setText("");
     }//GEN-LAST:event_txtSearchMouseClicked
 
+    private void penyewaanViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penyewaanViewActionPerformed
+        // TODO add your handling code here:
+        PenyewaanView pv = new PenyewaanView();
+        this.dispose();
+        pv.setVisible(true);
+    }//GEN-LAST:event_penyewaanViewActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1042,6 +1069,7 @@ public class KendaraanView extends javax.swing.JFrame {
     private javax.swing.JLabel npm1Label;
     private javax.swing.JLabel npm2Label;
     private javax.swing.JLabel penumpangLabel;
+    private javax.swing.JButton penyewaanView;
     private javax.swing.JPanel showDataPanel;
     private javax.swing.JTextArea showDataTextAreaMobil;
     private javax.swing.JTextArea showDataTextAreaMotor;

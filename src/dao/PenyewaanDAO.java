@@ -117,14 +117,11 @@ public class PenyewaanDAO {
 
         con = dbcon.makeConnection();
         
-           String sql = "UPDATE penyewaan SET merk = '" + p.getKendaraan().getMerk() + ", "
-                + "jenis = '" + p.getKendaraan().getJenis() + ", "
-                + "nama = '" + p.getCustomer().getNama() + ", "
+           String sql = "UPDATE penyewaan SET id_kendaraan = '" + p.getKendaraan().getId() + "', "
+                + "id_customer = '" + p.getCustomer().getId() + "', "
                 + "lama_sewa = '" + p.getLama_sewa()+ "', "
                 + "total_harga = '" + p.getTotal_harga() + "', "
-                + "fasilitas = '" + p.getFasilitas() + "', "
-                + "jumlah_penumpang = '" + p.getKendaraan().getJumlah_penumpang() + "', "
-                + "jenis_tak = '" + p.getKendaraan().getJenis_tak() + "', "
+                + "fasilitas = '" + p.getFasilitas() + "' "
                 + "WHERE id = '" + p.getId() + "'"; 
            System.out.println("Editing penyewaan ...");
                 

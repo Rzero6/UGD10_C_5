@@ -8,12 +8,15 @@ import Exception.InputKosongException;
 import control.PenyewaanControl;
 import control.CustomerControl;
 import control.KendaraanControl;
+import java.awt.Color;
+import java.awt.Font;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import model.Customer;
 import model.Kendaraan;
 import model.Penyewaan;
+import table.TablePenyewaan;
 
 /**
  * Nama : Reynold Kunarto 
@@ -37,6 +40,8 @@ public class PenyewaanView extends javax.swing.JFrame {
     int selectedId = 0;
     public PenyewaanView() {
         initComponents();
+        tablePenyewaan.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,14));
+        
         setComponent(false);
         setEditDeleteBtn(false);
         kendaraanControl = new KendaraanControl();
@@ -62,6 +67,9 @@ public class PenyewaanView extends javax.swing.JFrame {
         kelompokLabel = new javax.swing.JLabel();
         npm1Label = new javax.swing.JLabel();
         npm2Label = new javax.swing.JLabel();
+        kendaraanViewBtn = new javax.swing.JButton();
+        penyewaanBtn = new javax.swing.JButton();
+        customerViewBtn = new javax.swing.JButton();
         actionBar = new javax.swing.JPanel();
         addBtn = new javax.swing.JButton();
         editBtn = new javax.swing.JButton();
@@ -91,16 +99,24 @@ public class PenyewaanView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         container.setBackground(new java.awt.Color(204, 204, 204));
+        container.setPreferredSize(new java.awt.Dimension(1200, 720));
 
         header.setBackground(new java.awt.Color(255, 204, 0));
+        header.setPreferredSize(new java.awt.Dimension(1200, 92));
+
+        kelompokPanel.setBackground(new java.awt.Color(255, 204, 0));
+        kelompokPanel.setForeground(new java.awt.Color(51, 51, 51));
 
         kelompokLabel.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        kelompokLabel.setForeground(new java.awt.Color(51, 51, 51));
         kelompokLabel.setText("Kelompok 5");
 
         npm1Label.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        npm1Label.setForeground(new java.awt.Color(51, 51, 51));
         npm1Label.setText("210711015");
 
         npm2Label.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        npm2Label.setForeground(new java.awt.Color(51, 51, 51));
         npm2Label.setText("210711023");
 
         javax.swing.GroupLayout kelompokPanelLayout = new javax.swing.GroupLayout(kelompokPanel);
@@ -130,26 +146,94 @@ public class PenyewaanView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        kendaraanViewBtn.setBackground(new java.awt.Color(255, 204, 0));
+        kendaraanViewBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        kendaraanViewBtn.setForeground(new java.awt.Color(51, 51, 51));
+        kendaraanViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/carIcon.png"))); // NOI18N
+        kendaraanViewBtn.setText("\nKendaraan");
+        kendaraanViewBtn.setBorder(null);
+        kendaraanViewBtn.setBorderPainted(false);
+        kendaraanViewBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        kendaraanViewBtn.setIconTextGap(0);
+        kendaraanViewBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        kendaraanViewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kendaraanViewBtnActionPerformed(evt);
+            }
+        });
+
+        penyewaanBtn.setBackground(new java.awt.Color(134, 105, 0));
+        penyewaanBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        penyewaanBtn.setForeground(new java.awt.Color(51, 51, 51));
+        penyewaanBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/sewaIcon.png"))); // NOI18N
+        penyewaanBtn.setActionCommand("Penyewaan");
+        penyewaanBtn.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(51, 51, 51)));
+        penyewaanBtn.setBorderPainted(false);
+        penyewaanBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        penyewaanBtn.setIconTextGap(2);
+        penyewaanBtn.setLabel("Penyewaan");
+        penyewaanBtn.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        penyewaanBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        penyewaanBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                penyewaanBtnActionPerformed(evt);
+            }
+        });
+
+        customerViewBtn.setBackground(new java.awt.Color(255, 204, 0));
+        customerViewBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        customerViewBtn.setForeground(new java.awt.Color(51, 51, 51));
+        customerViewBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/customerIcon.png"))); // NOI18N
+        customerViewBtn.setText("Customer");
+        customerViewBtn.setBorder(null);
+        customerViewBtn.setBorderPainted(false);
+        customerViewBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        customerViewBtn.setIconTextGap(2);
+        customerViewBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        customerViewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customerViewBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
-                .addContainerGap(938, Short.MAX_VALUE)
-                .addComponent(kelompokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        headerLayout.setVerticalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
+                .addComponent(penyewaanBtn)
+                .addGap(35, 35, 35)
+                .addComponent(kendaraanViewBtn)
+                .addGap(35, 35, 35)
+                .addComponent(customerViewBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(kelompokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
 
-        actionBar.setBackground(new java.awt.Color(51, 51, 51));
+        headerLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {customerViewBtn, kendaraanViewBtn, penyewaanBtn});
 
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(customerViewBtn)
+                    .addComponent(penyewaanBtn)
+                    .addComponent(kendaraanViewBtn)
+                    .addComponent(kelompokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11))
+        );
+
+        headerLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {customerViewBtn, kendaraanViewBtn, penyewaanBtn});
+
+        actionBar.setBackground(new java.awt.Color(51, 51, 51));
+        actionBar.setPreferredSize(new java.awt.Dimension(1200, 56));
+
+        addBtn.setBackground(new java.awt.Color(255, 204, 0));
         addBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addBtn.setForeground(new java.awt.Color(51, 51, 51));
         addBtn.setText("Tambah");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +241,9 @@ public class PenyewaanView extends javax.swing.JFrame {
             }
         });
 
+        editBtn.setBackground(new java.awt.Color(255, 204, 0));
         editBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        editBtn.setForeground(new java.awt.Color(51, 51, 51));
         editBtn.setText("Ubah");
         editBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,7 +251,9 @@ public class PenyewaanView extends javax.swing.JFrame {
             }
         });
 
+        deleteBtn.setBackground(new java.awt.Color(255, 204, 0));
         deleteBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        deleteBtn.setForeground(new java.awt.Color(51, 51, 51));
         deleteBtn.setText("Hapus");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +261,9 @@ public class PenyewaanView extends javax.swing.JFrame {
             }
         });
 
+        searchBtn.setBackground(new java.awt.Color(255, 204, 0));
         searchBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        searchBtn.setForeground(new java.awt.Color(51, 51, 51));
         searchBtn.setText("Cari");
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,25 +271,31 @@ public class PenyewaanView extends javax.swing.JFrame {
             }
         });
 
+        searchInput.setBackground(new java.awt.Color(255, 204, 0));
+        searchInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        searchInput.setForeground(new java.awt.Color(51, 51, 51));
+        searchInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchInputKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout actionBarLayout = new javax.swing.GroupLayout(actionBar);
         actionBar.setLayout(actionBarLayout);
         actionBarLayout.setHorizontalGroup(
             actionBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(actionBarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(actionBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(actionBarLayout.createSequentialGroup()
-                        .addComponent(editBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 735, Short.MAX_VALUE)
-                        .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchBtn))
-                    .addGroup(actionBarLayout.createSequentialGroup()
-                        .addGroup(actionBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addBtn)
-                            .addComponent(deleteBtn))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, actionBarLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(addBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(editBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deleteBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(searchBtn)
+                .addGap(35, 35, 35))
         );
 
         actionBarLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addBtn, deleteBtn, editBtn});
@@ -207,25 +303,24 @@ public class PenyewaanView extends javax.swing.JFrame {
         actionBarLayout.setVerticalGroup(
             actionBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(actionBarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(addBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(15, 15, 15)
                 .addGroup(actionBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBtn)
                     .addComponent(editBtn)
+                    .addComponent(deleteBtn)
                     .addComponent(searchBtn)
                     .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deleteBtn)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         inputPanel.setBackground(new java.awt.Color(255, 255, 255));
+        inputPanel.setPreferredSize(new java.awt.Dimension(1200, 184));
 
         kendaraanLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         kendaraanLabel.setForeground(new java.awt.Color(50, 50, 50));
         kendaraanLabel.setText("Kendaraan");
 
-        kendaraanDropdown.setBackground(new java.awt.Color(153, 153, 153));
+        kendaraanDropdown.setBackground(new java.awt.Color(255, 255, 255));
         kendaraanDropdown.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         kendaraanDropdown.setForeground(new java.awt.Color(51, 51, 51));
 
@@ -233,7 +328,7 @@ public class PenyewaanView extends javax.swing.JFrame {
         customerLabel.setForeground(new java.awt.Color(50, 50, 50));
         customerLabel.setText("Nama Customer");
 
-        customerDropdown.setBackground(new java.awt.Color(153, 153, 153));
+        customerDropdown.setBackground(new java.awt.Color(255, 255, 255));
         customerDropdown.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         customerDropdown.setForeground(new java.awt.Color(51, 51, 51));
 
@@ -241,7 +336,7 @@ public class PenyewaanView extends javax.swing.JFrame {
         lamaLabel.setForeground(new java.awt.Color(50, 50, 50));
         lamaLabel.setText("Lama Sewa");
 
-        lamaInput.setBackground(new java.awt.Color(153, 153, 153));
+        lamaInput.setBackground(new java.awt.Color(255, 255, 255));
         lamaInput.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lamaInput.setForeground(new java.awt.Color(51, 51, 51));
 
@@ -249,7 +344,7 @@ public class PenyewaanView extends javax.swing.JFrame {
         hargaLabel.setForeground(new java.awt.Color(50, 50, 50));
         hargaLabel.setText("Total Harga");
 
-        hargaInput.setBackground(new java.awt.Color(153, 153, 153));
+        hargaInput.setBackground(new java.awt.Color(255, 255, 255));
         hargaInput.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         hargaInput.setForeground(new java.awt.Color(51, 51, 51));
 
@@ -257,6 +352,7 @@ public class PenyewaanView extends javax.swing.JFrame {
         fasilitasLabel.setForeground(new java.awt.Color(50, 50, 50));
         fasilitasLabel.setText("Fasilitas");
 
+        snackCheck.setBackground(new java.awt.Color(255, 255, 255));
         snackCheck.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         snackCheck.setText("Snack");
         snackCheck.addActionListener(new java.awt.event.ActionListener() {
@@ -265,13 +361,17 @@ public class PenyewaanView extends javax.swing.JFrame {
             }
         });
 
+        maskerCheck.setBackground(new java.awt.Color(255, 255, 255));
         maskerCheck.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         maskerCheck.setText("Masker");
 
+        tissueCheck.setBackground(new java.awt.Color(255, 255, 255));
         tissueCheck.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tissueCheck.setText("Tissue");
 
+        cancelBtn.setBackground(new java.awt.Color(51, 51, 51));
         cancelBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cancelBtn.setForeground(new java.awt.Color(255, 204, 0));
         cancelBtn.setText("Batal");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,7 +379,9 @@ public class PenyewaanView extends javax.swing.JFrame {
             }
         });
 
+        saveBtn.setBackground(new java.awt.Color(51, 51, 51));
         saveBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        saveBtn.setForeground(new java.awt.Color(255, 204, 0));
         saveBtn.setText("Simpan");
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -300,7 +402,7 @@ public class PenyewaanView extends javax.swing.JFrame {
                     .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(kendaraanDropdown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(kendaraanLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(75, 75, 75)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(hargaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -308,23 +410,22 @@ public class PenyewaanView extends javax.swing.JFrame {
                     .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(lamaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lamaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(inputPanelLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(inputPanelLayout.createSequentialGroup()
-                                .addComponent(snackCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(maskerCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(tissueCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(fasilitasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(inputPanelLayout.createSequentialGroup()
-                        .addGap(120, 120, 120)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(inputPanelLayout.createSequentialGroup()
+                            .addComponent(snackCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(maskerCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(tissueCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fasilitasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inputPanelLayout.createSequentialGroup()
                         .addComponent(cancelBtn)
                         .addGap(45, 45, 45)
-                        .addComponent(saveBtn)))
-                .addGap(54, 67, Short.MAX_VALUE))
+                        .addComponent(saveBtn)
+                        .addGap(37, 37, 37)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         inputPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {maskerCheck, snackCheck, tissueCheck});
@@ -364,11 +465,20 @@ public class PenyewaanView extends javax.swing.JFrame {
                             .addComponent(hargaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cancelBtn)
                             .addComponent(saveBtn))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
-        tablePanel.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(1200, 378));
 
+        tablePanel.setBackground(new java.awt.Color(255, 255, 255));
+        tablePanel.setPreferredSize(new java.awt.Dimension(1200, 376));
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(1200, 376));
+
+        tablePenyewaan.setBackground(new java.awt.Color(255, 255, 255));
+        tablePenyewaan.setForeground(new java.awt.Color(51, 51, 51));
         tablePenyewaan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -380,6 +490,11 @@ public class PenyewaanView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablePenyewaan.setFocusable(false);
+        tablePenyewaan.setGridColor(new java.awt.Color(51, 51, 51));
+        tablePenyewaan.setSelectionBackground(new java.awt.Color(255, 204, 0));
+        tablePenyewaan.setSelectionForeground(new java.awt.Color(51, 51, 51));
+        tablePenyewaan.setShowGrid(true);
         tablePenyewaan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tablePenyewaanMouseClicked(evt);
@@ -392,14 +507,16 @@ public class PenyewaanView extends javax.swing.JFrame {
         tablePanelLayout.setHorizontalGroup(
             tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tablePanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
+                .addContainerGap())
         );
         tablePanelLayout.setVerticalGroup(
             tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tablePanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 7, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jScrollPane2.setViewportView(tablePanel);
@@ -408,35 +525,28 @@ public class PenyewaanView extends javax.swing.JFrame {
         container.setLayout(containerLayout);
         containerLayout.setHorizontalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerLayout.createSequentialGroup()
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(inputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(header, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(actionBar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(actionBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(inputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        containerLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {actionBar, header, inputPanel, jScrollPane2});
-
         containerLayout.setVerticalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(containerLayout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(header, 97, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(actionBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(actionBar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(inputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPane2))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -514,7 +624,6 @@ public class PenyewaanView extends javax.swing.JFrame {
         }
         
         String idKendaraan = tableModel.getValueAt(clickedRow, 9).toString();
-        System.out.println("\n"+idKendaraan);
         for(Kendaraan kendaraan : listKendaraan){
             if(kendaraan.getId().equals(idKendaraan)){
                 indexKendaraan = listKendaraan.indexOf(kendaraan);
@@ -541,7 +650,7 @@ public class PenyewaanView extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             inputKosongException();
-            String fasilitas = "-";
+            String fasilitas;
             String snack = "";
             String masker = "";
             String tissue = "";
@@ -564,6 +673,8 @@ public class PenyewaanView extends javax.swing.JFrame {
             fasilitas = snack + masker + tissue;
             if(fasilitas.length() > 0 && fasilitas.charAt(fasilitas.length()-1) == ','){
                 fasilitas = fasilitas.substring(0, fasilitas.length()-1);
+            }else if(fasilitas.isEmpty()){
+                fasilitas = "-";
             }
             
             if(action.equals("Tambah")){
@@ -585,8 +696,42 @@ public class PenyewaanView extends javax.swing.JFrame {
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
+        setEditDeleteBtn(false);
+        setComponent(false);
+        try{
+            TablePenyewaan penyewaan = penyewaanControl.showDataPenyewaan(searchInput.getText());
+            if(penyewaan.getRowCount() == 0){
+                clearText();
+                setEditDeleteBtn(false);
+                JOptionPane.showConfirmDialog(null, "Data tidak ditemukan","Konfirmasi",JOptionPane.DEFAULT_OPTION);
+            }else{
+                tablePenyewaan.setModel(penyewaan);
+            }
+            clearText();
+        }catch(Exception e){
+            System.out.println("Error : "+e.getMessage());
+        }
         
     }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void penyewaanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penyewaanBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_penyewaanBtnActionPerformed
+
+    private void customerViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerViewBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_customerViewBtnActionPerformed
+
+    private void searchInputKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchInputKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchInputKeyPressed
+
+    private void kendaraanViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kendaraanViewBtnActionPerformed
+        // TODO add your handling code here:
+        KendaraanView kv = new KendaraanView();
+        this.dispose();
+        kv.setVisible(true);
+    }//GEN-LAST:event_kendaraanViewBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -630,6 +775,7 @@ public class PenyewaanView extends javax.swing.JFrame {
     private javax.swing.JPanel container;
     private javax.swing.JComboBox<Customer> customerDropdown;
     private javax.swing.JLabel customerLabel;
+    private javax.swing.JButton customerViewBtn;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JButton editBtn;
     private javax.swing.JLabel fasilitasLabel;
@@ -643,11 +789,13 @@ public class PenyewaanView extends javax.swing.JFrame {
     private javax.swing.JPanel kelompokPanel;
     private javax.swing.JComboBox<Kendaraan> kendaraanDropdown;
     private javax.swing.JLabel kendaraanLabel;
+    private javax.swing.JButton kendaraanViewBtn;
     private javax.swing.JTextField lamaInput;
     private javax.swing.JLabel lamaLabel;
     private javax.swing.JCheckBox maskerCheck;
     private javax.swing.JLabel npm1Label;
     private javax.swing.JLabel npm2Label;
+    private javax.swing.JButton penyewaanBtn;
     private javax.swing.JButton saveBtn;
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField searchInput;
@@ -671,6 +819,13 @@ public class PenyewaanView extends javax.swing.JFrame {
         
         saveBtn.setEnabled(b);
         cancelBtn.setEnabled(b);
+        if(b){
+            saveBtn.setForeground(new Color(255,204,0));
+            cancelBtn.setForeground(new Color(255,204,0));
+        }else{
+            saveBtn.setForeground(new Color(102,102,102));
+            cancelBtn.setForeground(new Color(102,102,102));
+        }
     }
 
     public void setEditDeleteBtn(boolean b) {

@@ -306,9 +306,9 @@ public class KendaraanView extends javax.swing.JFrame {
 
         headerPanel.setBackground(new java.awt.Color(255, 255, 86));
 
-        titleContent.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        titleContent.setFont(new java.awt.Font("Bauhaus 93", 3, 36)); // NOI18N
         titleContent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleContent.setText("RENTAL KENDARAAN NEGARA");
+        titleContent.setText("LALAAUTO ");
 
         kelompokLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         kelompokLabel.setText("Kelompok 5");
@@ -322,9 +322,10 @@ public class KendaraanView extends javax.swing.JFrame {
         logoLabel.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 8)); // NOI18N
-        jLabel1.setText("By Lala Autos");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("By Lala ");
 
-        penyewaanView.setBackground(new java.awt.Color(255, 255, 86));
+        penyewaanView.setBackground(new java.awt.Color(193, 193, 0));
         penyewaanView.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         penyewaanView.setForeground(new java.awt.Color(51, 51, 51));
         penyewaanView.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/sewaIcon.png"))); // NOI18N
@@ -351,15 +352,12 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(titleContent)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                        .addComponent(penyewaanView)
-                        .addGap(30, 30, 30)
-                        .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                .addComponent(penyewaanView)
+                .addGap(30, 30, 30)
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(logoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
 
         headerPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {npm1Label, npm2Label});
@@ -368,22 +366,21 @@ public class KendaraanView extends javax.swing.JFrame {
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(penyewaanView)
-                    .addGroup(headerPanelLayout.createSequentialGroup()
-                        .addComponent(kelompokLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(npm1Label)
-                            .addComponent(npm2Label)))
-                    .addGroup(headerPanelLayout.createSequentialGroup()
-                        .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1))
-                    .addGroup(headerPanelLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(titleContent)))
-                .addContainerGap())
+                .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(titleContent)
+                    .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(penyewaanView)
+                        .addGroup(headerPanelLayout.createSequentialGroup()
+                            .addComponent(kelompokLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(npm1Label)
+                                .addComponent(npm2Label)))
+                        .addGroup(headerPanelLayout.createSequentialGroup()
+                            .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout allPanelLayout = new javax.swing.GroupLayout(allPanel);

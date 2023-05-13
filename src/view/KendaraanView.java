@@ -891,10 +891,10 @@ public class KendaraanView extends javax.swing.JFrame {
                         idKendaraanException();
                         inputKosongException(2);
                         if(mobilRBtn.isSelected()){
-                            jenis = "mobil";
+                            jenis = "Mobil";
                             idMaxMobil++;
                         }else{
-                            jenis = "motor";
+                            jenis = "Motor";
                             idMaxMotor++;
                         }
                         Kendaraan k = null;

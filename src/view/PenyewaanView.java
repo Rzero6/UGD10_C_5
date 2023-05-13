@@ -850,7 +850,7 @@ public class PenyewaanView extends javax.swing.JFrame {
     }
 
     public void setKendaraanToDropdown() {
-        listKendaraan = kendaraanControl.showListKendaraan();
+        listKendaraan = kendaraanControl.showAllKendaraan();
         for(int i = 0; i < listKendaraan.size(); i++){
             kendaraanDropdown.addItem(listKendaraan.get(i));
         }

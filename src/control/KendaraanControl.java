@@ -41,7 +41,7 @@ public class KendaraanControl {
         return kendaraanString;
     }
     
-    public List<Kendaraan> showListKendaraan(){
+    public List<Kendaraan> showAllKendaraan(){
         List<Kendaraan> dataKendaraan = kDao.showKendaraan("All");
         return dataKendaraan;
     }

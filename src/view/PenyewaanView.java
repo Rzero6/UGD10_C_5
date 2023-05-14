@@ -199,24 +199,23 @@ public class PenyewaanView extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Bauhaus 93", 3, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/horse.png"))); // NOI18N
         jLabel1.setText("LALARENT ");
         jLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(31, 31, 31)
                 .addComponent(penyewaanBtn)
                 .addGap(35, 35, 35)
                 .addComponent(kendaraanViewBtn)
                 .addGap(35, 35, 35)
                 .addComponent(customerViewBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(kelompokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -232,12 +231,10 @@ public class PenyewaanView extends javax.swing.JFrame {
                     .addComponent(customerViewBtn)
                     .addComponent(penyewaanBtn)
                     .addComponent(kendaraanViewBtn)
-                    .addComponent(kelompokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11))
-            .addGroup(headerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(kelompokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28))
         );
 
         headerLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {customerViewBtn, kendaraanViewBtn, penyewaanBtn});
@@ -323,7 +320,7 @@ public class PenyewaanView extends javax.swing.JFrame {
                     .addComponent(deleteBtn)
                     .addComponent(searchBtn)
                     .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         inputPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -500,6 +497,7 @@ public class PenyewaanView extends javax.swing.JFrame {
         ));
         tablePenyewaan.setFocusable(false);
         tablePenyewaan.setGridColor(new java.awt.Color(51, 51, 51));
+        tablePenyewaan.setRowHeight(30);
         tablePenyewaan.setSelectionBackground(new java.awt.Color(255, 204, 0));
         tablePenyewaan.setSelectionForeground(new java.awt.Color(51, 51, 51));
         tablePenyewaan.setShowGrid(true);
@@ -611,8 +609,10 @@ public class PenyewaanView extends javax.swing.JFrame {
         int indexKendaraan = -1;
         int indexCustomer = -1;
         setEditDeleteBtn(true);
-        
         setComponent(false);
+        snackCheck.setSelected(false);
+        maskerCheck.setSelected(false);
+        tissueCheck.setSelected(false);
         
         int clickedRow = tablePenyewaan.getSelectedRow();
         TableModel tableModel = tablePenyewaan.getModel();
@@ -820,17 +820,14 @@ public class PenyewaanView extends javax.swing.JFrame {
         snackCheck.setEnabled(b);
         maskerCheck.setEnabled(b);
         tissueCheck.setEnabled(b);
-        snackCheck.setSelected(b);
-        maskerCheck.setSelected(b);
-        tissueCheck.setSelected(b);
         lamaInput.setEnabled(b);
         hargaInput.setEnabled(b);
         
         saveBtn.setEnabled(b);
         cancelBtn.setEnabled(b);
         if(b){
-            saveBtn.setForeground(new Color(255,204,0));
-            cancelBtn.setForeground(new Color(255,204,0));
+            saveBtn.setForeground(new Color(255,255,255));
+            cancelBtn.setForeground(new Color(255,255,255));
         }else{
             saveBtn.setForeground(new Color(102,102,102));
             cancelBtn.setForeground(new Color(102,102,102));

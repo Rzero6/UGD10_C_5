@@ -285,7 +285,6 @@ public class PenyewaanView extends javax.swing.JFrame {
             }
         });
 
-        searchInput.setBackground(new java.awt.Color(255, 204, 0));
         searchInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         searchInput.setForeground(new java.awt.Color(51, 51, 51));
         searchInput.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -324,7 +323,7 @@ public class PenyewaanView extends javax.swing.JFrame {
                     .addComponent(deleteBtn)
                     .addComponent(searchBtn)
                     .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         inputPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -334,7 +333,6 @@ public class PenyewaanView extends javax.swing.JFrame {
         kendaraanLabel.setForeground(new java.awt.Color(50, 50, 50));
         kendaraanLabel.setText("Kendaraan");
 
-        kendaraanDropdown.setBackground(new java.awt.Color(255, 255, 255));
         kendaraanDropdown.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         kendaraanDropdown.setForeground(new java.awt.Color(51, 51, 51));
 
@@ -342,7 +340,6 @@ public class PenyewaanView extends javax.swing.JFrame {
         customerLabel.setForeground(new java.awt.Color(50, 50, 50));
         customerLabel.setText("Nama Customer");
 
-        customerDropdown.setBackground(new java.awt.Color(255, 255, 255));
         customerDropdown.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         customerDropdown.setForeground(new java.awt.Color(51, 51, 51));
 
@@ -350,7 +347,6 @@ public class PenyewaanView extends javax.swing.JFrame {
         lamaLabel.setForeground(new java.awt.Color(50, 50, 50));
         lamaLabel.setText("Lama Sewa");
 
-        lamaInput.setBackground(new java.awt.Color(255, 255, 255));
         lamaInput.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lamaInput.setForeground(new java.awt.Color(51, 51, 51));
 
@@ -358,7 +354,6 @@ public class PenyewaanView extends javax.swing.JFrame {
         hargaLabel.setForeground(new java.awt.Color(50, 50, 50));
         hargaLabel.setText("Total Harga");
 
-        hargaInput.setBackground(new java.awt.Color(255, 255, 255));
         hargaInput.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         hargaInput.setForeground(new java.awt.Color(51, 51, 51));
 
@@ -383,9 +378,9 @@ public class PenyewaanView extends javax.swing.JFrame {
         tissueCheck.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tissueCheck.setText("Tissue");
 
-        cancelBtn.setBackground(new java.awt.Color(51, 51, 51));
+        cancelBtn.setBackground(new java.awt.Color(255, 0, 0));
         cancelBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        cancelBtn.setForeground(new java.awt.Color(255, 204, 0));
+        cancelBtn.setForeground(new java.awt.Color(255, 255, 255));
         cancelBtn.setText("Batal");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,9 +388,9 @@ public class PenyewaanView extends javax.swing.JFrame {
             }
         });
 
-        saveBtn.setBackground(new java.awt.Color(51, 51, 51));
+        saveBtn.setBackground(new java.awt.Color(0, 204, 0));
         saveBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        saveBtn.setForeground(new java.awt.Color(255, 204, 0));
+        saveBtn.setForeground(new java.awt.Color(255, 255, 255));
         saveBtn.setText("Simpan");
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -491,7 +486,6 @@ public class PenyewaanView extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1200, 376));
 
-        tablePenyewaan.setBackground(new java.awt.Color(255, 255, 255));
         tablePenyewaan.setForeground(new java.awt.Color(51, 51, 51));
         tablePenyewaan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

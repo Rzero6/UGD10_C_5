@@ -728,6 +728,9 @@ public class PenyewaanView extends javax.swing.JFrame {
 
     private void customerViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerViewBtnActionPerformed
         // TODO add your handling code here:
+        CustomerView cv = new CustomerView();
+        this.dispose();
+        cv.setVisible(true);
     }//GEN-LAST:event_customerViewBtnActionPerformed
 
     private void searchInputKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchInputKeyPressed
@@ -863,7 +866,7 @@ public class PenyewaanView extends javax.swing.JFrame {
     }
 
     public void setCustomerToDropdown() {
-        listCustomer = customerControl.showListCustomer();
+        listCustomer = customerControl.showListCustomer("");
         for(int i = 0; i < listCustomer.size();i++){
             customerDropdown.addItem(listCustomer.get(i));
         }

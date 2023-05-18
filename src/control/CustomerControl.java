@@ -16,6 +16,7 @@ package control;
 import dao.CustomerDAO;
 import java.util.List;
 import model.Customer;
+import table.TableCustomer;
 
 public class CustomerControl {
     private CustomerDAO cDao = new CustomerDAO();
@@ -32,8 +33,14 @@ public class CustomerControl {
         cDao.deleteCustomer(id);
     }
     
-    public List<Customer> showListCustomer(){
-        List<Customer> dataCustomer = cDao.showCustomer();
+    public List<Customer> showListCustomer(String query){
+        List<Customer> dataCustomer = cDao.showCustomer(query);
         return dataCustomer;
+    }
+    
+    public TableCustomer showDataCustomer(String query){
+        List<Customer> dataCustomer = cDao.showCustomer(query);
+        TableCustomer tableCustomer = new TableCustomer(dataCustomer);
+        return tableCustomer;
     }
 }

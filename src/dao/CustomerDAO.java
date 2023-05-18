@@ -30,8 +30,8 @@ public class CustomerDAO {
     public void insertCustomer(Customer c){
         con = dbcon.makeConnection();
         
-        String sql = "INSERT INTO customer(id, nama, ktp, no_telepon) "
-                + "VALUES ('" + c.getId() + "', '" + c.getNama() + "', '"
+        String sql = "INSERT INTO customer(nama, ktp, no_telepon) "
+                + "VALUES ('" + c.getNama() + "', '"
                 + c.getKtp() + "', '" + c.getNo_telepon() + "')";
         
         System.out.println("Adding Customer ...");
@@ -48,10 +48,15 @@ public class CustomerDAO {
         dbcon.closeConnection();
     }
     
-    public List<Customer> showCustomer(){
+    public List<Customer> showCustomer(String query){
         con = dbcon.makeConnection();
         
-        String sql = "SELECT * FROM customer";
+        String sql = "SELECT * FROM customer WHERE "
+                + "(id LIKE '%"+query+"%'"
+                + "OR nama LIKE '%"+query+"%'"
+                + "OR ktp LIKE '%"+query+"%'"
+                + "OR no_telepon LIKE '%"+query+"%')"
+                ;
         System.out.println("Mengambil data customer ...");
         
         List<Customer> list = new ArrayList();
@@ -121,8 +126,8 @@ public class CustomerDAO {
         
            String sql = "UPDATE customer SET nama = '" + c.getNama()+ "', "
                 + "ktp = '" + c.getKtp() + "', "
-                + "no_telepon = '" + c.getNo_telepon() + "', "
-                + "WHERE id = '" + c.getId() + "'"; 
+                + "no_telepon = '" + c.getNo_telepon() + "'"
+                + "WHERE (id = '" + c.getId() + "')"; 
            System.out.println("Editing customer ...");
                 
         try {

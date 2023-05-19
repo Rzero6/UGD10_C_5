@@ -19,6 +19,7 @@ import Exception.InputKosongException;
 import Exception.JenisKendaraanException;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 public class KendaraanView extends javax.swing.JFrame {
     private String jenis;
@@ -195,15 +196,15 @@ public class KendaraanView extends javax.swing.JFrame {
         mobilRBtn = new javax.swing.JRadioButton();
         mobilInput = new javax.swing.JTextField();
         penumpangLabel = new javax.swing.JLabel();
+        containerOptionMotor = new javax.swing.JPanel();
+        motorRBtn = new javax.swing.JRadioButton();
+        motorInput = new javax.swing.JTextField();
+        takLabel = new javax.swing.JLabel();
         showDataPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         showDataTextAreaMobil = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         showDataTextAreaMotor = new javax.swing.JTextArea();
-        containerOptionMotor = new javax.swing.JPanel();
-        motorRBtn = new javax.swing.JRadioButton();
-        motorInput = new javax.swing.JTextField();
-        takLabel = new javax.swing.JLabel();
         mobilLabel = new javax.swing.JLabel();
         motorLabel = new javax.swing.JLabel();
         btnCancel = new javax.swing.JButton();
@@ -211,7 +212,7 @@ public class KendaraanView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 0));
-        setPreferredSize(new java.awt.Dimension(760, 660));
+        setPreferredSize(new java.awt.Dimension(1200, 720));
 
         allPanel.setBackground(new java.awt.Color(0, 204, 255));
         allPanel.setForeground(new java.awt.Color(255, 255, 255));
@@ -433,7 +434,7 @@ public class KendaraanView extends javax.swing.JFrame {
                     .addGroup(containerInputIdLayout.createSequentialGroup()
                         .addComponent(idLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(idInput, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE))
+                    .addComponent(idInput, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
                 .addContainerGap())
         );
         containerInputIdLayout.setVerticalGroup(
@@ -467,8 +468,8 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addGroup(containerInputMerkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(containerInputMerkLayout.createSequentialGroup()
                         .addComponent(merkLabel)
-                        .addGap(0, 247, Short.MAX_VALUE))
-                    .addComponent(merkInput, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE))
+                        .addGap(0, 303, Short.MAX_VALUE))
+                    .addComponent(merkInput, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
                 .addContainerGap())
         );
         containerInputMerkLayout.setVerticalGroup(
@@ -502,7 +503,7 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addGroup(containerInputTahunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(containerInputTahunLayout.createSequentialGroup()
                         .addComponent(tahunLabel)
-                        .addGap(0, 180, Short.MAX_VALUE))
+                        .addGap(0, 230, Short.MAX_VALUE))
                     .addComponent(tahunInput))
                 .addContainerGap())
         );
@@ -535,10 +536,10 @@ public class KendaraanView extends javax.swing.JFrame {
             .addGroup(containerInputNoPlatLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(containerInputNoPlatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(noPlatInput)
                     .addGroup(containerInputNoPlatLayout.createSequentialGroup()
                         .addComponent(noPlatLabel)
-                        .addGap(0, 234, Short.MAX_VALUE))
-                    .addComponent(noPlatInput, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE))
+                        .addGap(0, 290, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         containerInputNoPlatLayout.setVerticalGroup(
@@ -583,8 +584,7 @@ public class KendaraanView extends javax.swing.JFrame {
                         .addGroup(containerOptionMobilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(mobilRBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(penumpangLabel))
-                        .addGap(0, 138, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         containerOptionMobilLayout.setVerticalGroup(
             containerOptionMobilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -596,37 +596,6 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mobilInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        showDataPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        showDataTextAreaMobil.setEditable(false);
-        showDataTextAreaMobil.setBackground(new java.awt.Color(204, 204, 204));
-        showDataTextAreaMobil.setColumns(20);
-        showDataTextAreaMobil.setRows(5);
-        jScrollPane3.setViewportView(showDataTextAreaMobil);
-
-        showDataTextAreaMotor.setEditable(false);
-        showDataTextAreaMotor.setBackground(new java.awt.Color(204, 204, 204));
-        showDataTextAreaMotor.setColumns(20);
-        showDataTextAreaMotor.setRows(5);
-        showDataTextAreaMotor.setPreferredSize(null);
-        jScrollPane1.setViewportView(showDataTextAreaMotor);
-
-        javax.swing.GroupLayout showDataPanelLayout = new javax.swing.GroupLayout(showDataPanel);
-        showDataPanel.setLayout(showDataPanelLayout);
-        showDataPanelLayout.setHorizontalGroup(
-            showDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(showDataPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        showDataPanelLayout.setVerticalGroup(
-            showDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
 
         containerOptionMotor.setBackground(new java.awt.Color(255, 255, 255));
@@ -661,8 +630,7 @@ public class KendaraanView extends javax.swing.JFrame {
                         .addGroup(containerOptionMotorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(motorRBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(takLabel))
-                        .addGap(0, 170, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(248, Short.MAX_VALUE))))
         );
         containerOptionMotorLayout.setVerticalGroup(
             containerOptionMotorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -676,10 +644,44 @@ public class KendaraanView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        mobilLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        showDataPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        showDataTextAreaMobil.setEditable(false);
+        showDataTextAreaMobil.setBackground(new java.awt.Color(204, 204, 204));
+        showDataTextAreaMobil.setColumns(20);
+        showDataTextAreaMobil.setRows(5);
+        jScrollPane3.setViewportView(showDataTextAreaMobil);
+
+        showDataTextAreaMotor.setEditable(false);
+        showDataTextAreaMotor.setBackground(new java.awt.Color(204, 204, 204));
+        showDataTextAreaMotor.setColumns(20);
+        showDataTextAreaMotor.setRows(5);
+        showDataTextAreaMotor.setPreferredSize(null);
+        jScrollPane1.setViewportView(showDataTextAreaMotor);
+
+        javax.swing.GroupLayout showDataPanelLayout = new javax.swing.GroupLayout(showDataPanel);
+        showDataPanel.setLayout(showDataPanelLayout);
+        showDataPanelLayout.setHorizontalGroup(
+            showDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(showDataPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        showDataPanelLayout.setVerticalGroup(
+            showDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, showDataPanelLayout.createSequentialGroup()
+                .addGroup(showDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
+        );
+
+        mobilLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         mobilLabel.setText("Data Mobil");
 
-        motorLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        motorLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         motorLabel.setText("Data Motor");
 
         btnCancel.setBackground(new java.awt.Color(255, 0, 0));
@@ -706,30 +708,28 @@ public class KendaraanView extends javax.swing.JFrame {
         containerLabel.setLayout(containerLabelLayout);
         containerLabelLayout.setHorizontalGroup(
             containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerLabelLayout.createSequentialGroup()
-                .addGroup(containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLabelLayout.createSequentialGroup()
+                .addGroup(containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(containerLabelLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addContainerGap(209, Short.MAX_VALUE)
                         .addGroup(containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(containerInputId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(containerInputMerk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(containerInputTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(containerInputNoPlat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(containerLabelLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(mobilLabel)))
-                        .addGap(75, 75, 75)
+                            .addComponent(mobilLabel)
+                            .addComponent(containerInputMerk, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(containerInputTahun, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(containerInputNoPlat, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(containerInputId, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(100, 100, 100)
                         .addGroup(containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(motorLabel)
-                            .addComponent(containerOptionMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(containerOptionMobil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(containerLabelLayout.createSequentialGroup()
-                                .addGap(66, 66, 66)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(containerOptionMobil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(containerOptionMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLabelLayout.createSequentialGroup()
                                 .addComponent(btnSave)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnCancel))))
-                    .addComponent(showDataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                                .addComponent(btnCancel))
+                            .addComponent(motorLabel)))
+                    .addComponent(showDataPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         containerLabelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {containerInputId, containerInputMerk, containerInputNoPlat, containerInputTahun});
@@ -746,23 +746,23 @@ public class KendaraanView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(containerInputMerk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(containerInputTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(containerInputNoPlat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(containerInputTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(containerLabelLayout.createSequentialGroup()
                         .addComponent(containerOptionMobil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(containerOptionMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSave)
-                            .addComponent(btnCancel))))
-                .addGap(10, 10, 10)
+                        .addGap(18, 18, 18)
+                        .addComponent(containerOptionMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnSave)
+                        .addComponent(btnCancel))
+                    .addComponent(containerInputNoPlat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(containerLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mobilLabel)
                     .addComponent(motorLabel))
-                .addGap(10, 10, 10)
-                .addComponent(showDataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(showDataPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -773,14 +773,14 @@ public class KendaraanView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(allPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(containerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+            .addComponent(containerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(allPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(containerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
+                .addComponent(containerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -986,6 +986,7 @@ public class KendaraanView extends javax.swing.JFrame {
     private void penyewaanViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penyewaanViewActionPerformed
         // TODO add your handling code here:
         PenyewaanView pv = new PenyewaanView();
+        pv.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.dispose();
         pv.setVisible(true);
     }//GEN-LAST:event_penyewaanViewActionPerformed

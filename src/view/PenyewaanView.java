@@ -11,6 +11,7 @@ import control.KendaraanControl;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import model.Customer;
@@ -40,6 +41,7 @@ public class PenyewaanView extends javax.swing.JFrame {
     int selectedId = 0;
     public PenyewaanView() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
         tablePenyewaan.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,14));
         
         setComponent(false);
@@ -729,6 +731,7 @@ public class PenyewaanView extends javax.swing.JFrame {
     private void customerViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerViewBtnActionPerformed
         // TODO add your handling code here:
         CustomerView cv = new CustomerView();
+        cv.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.dispose();
         cv.setVisible(true);
     }//GEN-LAST:event_customerViewBtnActionPerformed
@@ -740,6 +743,7 @@ public class PenyewaanView extends javax.swing.JFrame {
     private void kendaraanViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kendaraanViewBtnActionPerformed
         // TODO add your handling code here:
         KendaraanView kv = new KendaraanView();
+        kv.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.dispose();
         kv.setVisible(true);
     }//GEN-LAST:event_kendaraanViewBtnActionPerformed

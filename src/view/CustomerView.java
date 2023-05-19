@@ -9,6 +9,7 @@ import control.CustomerControl;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import model.Customer;
@@ -547,6 +548,7 @@ public class CustomerView extends javax.swing.JFrame {
     private void kendaraanViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kendaraanViewBtnActionPerformed
         // TODO add your handling code here:
         KendaraanView kv = new KendaraanView();
+        kv.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.dispose();
         kv.setVisible(true);
     }//GEN-LAST:event_kendaraanViewBtnActionPerformed
@@ -554,6 +556,7 @@ public class CustomerView extends javax.swing.JFrame {
     private void penyewaanViewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_penyewaanViewBtnActionPerformed
         // TODO add your handling code here:
         PenyewaanView pv = new PenyewaanView();
+        pv.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.dispose();
         pv.setVisible(true);
     }//GEN-LAST:event_penyewaanViewBtnActionPerformed
